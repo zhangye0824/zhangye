@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="els">
+        <h1>{{title}}</h1>
+    </div>
+    <script>
+        let data = {
+            title: '斑马教育',
+            _title: '斑马教育'
+        }
+
+        function Vue(obj) {
+            let data = obj.data;
+            let tpl = document.querySelector(obj.el).innerHTML;
+            Object.defineProperty(obj.data, 'title', {
+                get() {
+                    return this._title;
+                },
+                set(value) {
+                    this._title = value;
+                    updateView();
+                }
+            })
+            function updateView() {
+                let str = tpl.replace(/{{\w+}}/, (match, $1) => {
+                    return data[$1];
+                })
+                document.querySelector(obj.el).innerHTML = str;
+            }
+            updateView();
+        }
+
+        let app = new Vue({
+            el: '#els',
+            data
+        })
+    </script>
+</body>
+</html>

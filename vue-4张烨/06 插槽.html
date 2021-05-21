@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <hr/>
+        <child>
+            <template #a>
+                <nav>
+                    <a href="">导航101</a><a href="">导航2</a><a href="">导航3</a><a href="">导航4</a><a href="">导航5</a>
+                </nav>
+            </template>
+        </child>
+    </div>
+    <template id="child">
+        <div>
+            <slot name="a"></slot>
+            <h1>child part1</h1>
+        </div>
+    </template>
+    <script src="/dist/06.js"></script>
+</body>
+</html>

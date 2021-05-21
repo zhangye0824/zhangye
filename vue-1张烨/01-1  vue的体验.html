@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="el">
+        <h1>{{title}}</h1>
+        <h2>{{slogan}}</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        let data = {
+            title: '斑马教育',
+            slogan: '搬动梦想，马上起航'
+        }
+
+        let app = new Vue({
+            el: '#el',
+            data
+        })
+    </script>
+</body>
+</html>
